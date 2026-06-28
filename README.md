@@ -7,12 +7,12 @@ A guide explaining how to set up SecuROM Bypass with Logging Console, Mercs2 Nat
 
 | Item                                             | Source                                                                  | Purpose                                                                  |
 | ------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| AustinKregel's SecuROM Bypass Patcher            | https://github.com/Mercenaries-Fan-Build/mercs2-securom-bypass/releases | Create a SecuROM-less Mercenaries2.exe                                   |
-| AustinKregel's pmc_bb.dll                        | https://github.com/Mercenaries-Fan-Build/pmc-blackbox/releases          | Set up the logging console                                               |
-| LoganW234's Mercs2Fix.asi (WITH LUA) + DXWrapper | https://github.com/loganw234/Mercenaries2/releases/tag/Alpha            | Lua-bridge on localhost for direct Lua injection, plus a multiplayer fix |
-| LoganW234's lua_repl.py                          | https://github.com/loganw234/Mercenaries2/blob/main/tools/lua_repl.py   | Using the Lua-bridge on localhost via CMD/Terminal                       |
-| Python                                           | Type `python` in CMD as Administrator to install Python                 | Required to run lua_repl.py                                              |
-| Retail/Origin/EA Play copy of Mercenaries 2      | Rip a Retail disk or something, I can't help you commit software piracy | Acquire the game, you know, so you can mod it                            |
+| AustinKregel's SecuROM Bypass Patcher            | https://github.com/Mercenaries-Fan-Build/mercs2-securom-bypass/releases | Create a SecuROM-less Mercenaries2.exe. Recommend the x86_64 version. Current version 0.4.1 sha256:60e29e... |
+| AustinKregel's `pmc_bb.dll`                      | https://github.com/Mercenaries-Fan-Build/pmc-blackbox/releases | Set up the logging console. Current version 0.2.0 sha256:d598ee... |
+| LoganW234's `Mercs2Fix.asi` (WITH LUA) + DXWrapper | https://github.com/loganw234/Mercenaries2/releases/tag/Alpha            | Lua-bridge on localhost for direct Lua injection, a multiplayer fix & ASI loader. Current version 1.1.1 |
+| LoganW234's `lua_repl.py`                        | https://github.com/loganw234/Mercenaries2/blob/main/tools/lua_repl.py | Using the Lua-bridge on localhost via CMD/Terminal |
+| Python                                           | Type `python` in CMD as Administrator to install Python | Required to run `lua_repl.py` |
+| Retail/Origin/EA Play copy of Mercenaries 2      | Rip a Retail disk or something, I can't help you commit software piracy | Acquire the game, you know, so you can mod it |
 
 ### Optional or Unnecessary Materials
 
@@ -34,7 +34,7 @@ After getting the SHA256 hash, copy it to your clipboard by double-clicking it t
 
 ## Step 2: Ascend from Darkness
 ### For the Sake of Neatness
-It would be a good idea to create a `scripts`, `plugins`, or `\update` folder in your `\Mercenaries 2 World in Flames\` game folder, where the Mercenaries2.exe file is, so as place any future ASI mods inside to keep the game folder as neat as possible. You'd really hate to be looking for an old ASI mod in the root folder because your game keeps crashing. Just make the folder, it makes future modding way easier on yourself. For this guide, I will be using `\Mercenaries 2 Worls in Flames\scripts\`.
+It would be a good idea to create a `scripts`, `plugins`, or `update` folder in your `\Mercenaries 2 World in Flames\` game folder, where the Mercenaries2.exe file is, so as place any future ASI mods inside to keep the game folder as neat as possible. You'd really hate to be looking for an old ASI mod in the root folder because your game keeps crashing. Just make the folder, it makes future modding way easier on yourself. For this guide, I will be using `\Mercenaries 2 Worls in Flames\scripts\`.
 
 ## Step 3: Rain Fire
 

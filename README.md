@@ -103,7 +103,7 @@ With the new `dev_cheat_menu.asi`, all that's required to open the Cheat Menu no
 
 Other options include:
 - Infinite Ammo
-  - `Object.SetInfiniteAmmo(Player.GetPrimaryCharacter(), true)`
+  - `Object.SetInfiniteAmmo(Player.GetPrimaryCharacter(), true)` <br/>
 You can find more valid Lua pokes [here](https://github.com/Mercenaries-Fan-Build/pmc-blackbox/wiki) <br/>
 <img width="2156" height="1471" alt="image" src="https://github.com/user-attachments/assets/fa86ea57-3251-4f3c-aa24-df5fa8f58644" />
 

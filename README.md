@@ -34,16 +34,43 @@ After getting the SHA256 hash, copy it to your clipboard by double-clicking it t
 
 ## Step 2: Ascend from Darkness
 ### For the Sake of Neatness
-It would be a good idea to create a `scripts`, `plugins`, or `update` folder in your `\Mercenaries 2 World in Flames\` game folder, where the Mercenaries2.exe file is, so as place any future ASI mods inside to keep the game folder as neat as possible. You'd really hate to be looking for an old ASI mod in the root folder because your game keeps crashing. Just make the folder, it makes future modding way easier on yourself. For this guide, I will be using `\Mercenaries 2 Worls in Flames\scripts\`.
+It would be a good idea to create a `scripts`, `plugins`, or `update` folder in your `\Mercenaries 2 World in Flames\` game folder, where the Mercenaries2.exe file is, so as to place any future ASI mods inside to keep the game folder as neat as possible. You should use only one of these unless you know what you're doing. Even I don't know what I'm doing. Trust me, bro, You'd really hate to be looking for an old ASI mod in the root folder because your game keeps crashing. Just make the folder, it makes future modding way easier on yourself. For this guide, I will be using `\Mercenaries 2 Worls in Flames\scripts\`.
 
 ## Step 3: Rain Fire
+### Move the Downloaded Files
+Place these files into your <ins>\Mercenaries 2 World in Flames\</ins> game folder:
+- AustinKregel's SecuROM Bypass Patcher
+  - Rename `apply_crack-windows-x86_64.exe` to `apply_crack.exe`, this will make patching Mercenaries2.exe easier later.
+- AustinKregel's `pmc_bb.dll`
+- LoganW234's `lua_repl.py`
+- ElishaCloud's DXWrapper (provided by LoganW234)
+  - `d3d9.dll`
+  - `dxwrapper.dll`
+  - `dxwrapper.ini`
+
+Place these files into your <ins>\Mercenaries 2 World in Flames\scripts</ins>. If you use \plugins or \update, put them there:
+- LoganW234's `Mercs2Fix.asi`
 
 ## Step 4: Unleash the Horde
+### Patch Mercenaries2.exe
+Here comes the hard part for some of you. You need to open up CMD or Terminal. Admin, doesn't matter.
+In your file explorer, navigate to your `\Mercenaries 2 World in Flames\` game folder. In the address bar at the top, copy (CTRL + C) the path to your game, shown there. For example, mine looks like this:
+`F:\Games\Origin Games\Mercenaries 2 World in Flames`. I need to add another backslash `\` at the end so CMD knows I'm gonna call files beneath it, I guess.
+Back to CMD/Terminal, type `cd ""` (AKA "call directory") and then move the cursor with your arrow keys to between the two quotes, then PASTE (CTRL + V) your game folder's path. Without the quotes, CMD will throw an error. Press ENTER to continue.
+CMD will show the path it started with instead. Why is it doing this? Well, if your game is on another drive, you need to call the drive letter. Since my game is on drive `F:`, I can type `f:` and my game folder's path will be called. I don't know why, don't ask, but it works.
+So CMD will now be pointed at your game folder's path. What you can do next is type `apply_crack Mercenaries2.exe` and it will start patching your executable. It will create an entirely NEW executable called `Mercenaries2 cracked.exe`. If you open this now, it will start the game with the logging console and load the `Mercs2Fix.asi`. The logging console will show that it has indeed loaded the ASI. But what about the Lua-bridge? To verify that's working, you need to find `Mercs2Game.log` in your game folder. Open that with a text editor, and you'll see that it's listening to 127.0.0.1:27050 which is localhost on port 27050: Mercenaries 2 is now hosting a tiny Lua server on your computer, completely offline I might add, and is listening, waiting for you to send it messages. In this case, something called a "poke". You can read more about that elsewhere if you want. But you want the damn Cheat Menu, right? I know you do, because I do too.
 
 ## Step 5: Skewer the Winged Beast
+### Installing and Running Python (a snake, but pretend it has wings)
+So now that you're in-game and itching to use the Cheat Menu, let me tell you real quick how to send Lua across the bridge.
+You should still have CMD open and pointed to your game folder.
+Type `python` and CMD will install python. I haven't figured out where it does this yet, but bear with me. After it finishes, you'll see that it no longer lists your current game folder path. It should look like three arrows pointing to the right, like this `>>>`.
+Type `exit()` to return to CMD's normal functions.
 
 ## Step 6: Wield an Iron Fist
+### 
 
 ## Step 7: Raise Hell
 
 ## Step 8: Freedom
+### Join the Mercenaries-games Modding Discord, `menace.pro`

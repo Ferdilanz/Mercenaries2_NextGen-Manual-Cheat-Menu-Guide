@@ -24,7 +24,7 @@ A guide explaining how to set up SecuROM Bypass with Logging Console, Mercs2 Nat
 | ThirteenAG's Ultimate ASI Loader | https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases  | It's an ASI loader. Completely unnecessary for what we're doing since DXWrapper AND the SecuROM bypass have ASI loaders built into them. |
 
 ### Valid Executables
-You **must** take a hash of your Mercenaries2.exe to determine whether it's usable for the SecuROM Bypass Patcher **and** the Lua-bridge. You can do this with any newer version of 7Zip through the context menu via right-clicking Mercenaries2.exe. \n
+You **must** take a hash of your Mercenaries2.exe to determine whether it's usable for the SecuROM Bypass Patcher **and** the Lua-bridge. You can do this with any newer version of 7Zip through the context menu via right-clicking Mercenaries2.exe. <br/>
 After getting the SHA256 hash, copy it to your clipboard by double-clicking it to highlight, CTRL + C to copy, CTRL + F on this page to FIND, then paste the hash into the search field using CTRL + V. If your SHA256 hash matches one of these, you may proceed. <ins>**If it doesn't, find a different copy of the game.**</ins>
 
 | Version + Source                   | Size in bytes | Lua-Bridge Compatible? |  SHA256                    |
@@ -54,33 +54,33 @@ Place these files into your \Mercenaries 2 World in Flames\scripts. If you use \
 
 ## Step 4: Unleash the Horde
 ### Patch Mercenaries2.exe
-Here comes the hard part for some of you. You need to open up CMD or Terminal. Admin is preferred.
+Here comes the hard part for some of you. You need to open up CMD or Terminal. Admin is preferred. <br/>
 In your file explorer, navigate to your `\Mercenaries 2 World in Flames\` game folder. In the address bar at the top, copy (CTRL + C) the path to your game, shown there. For example, mine looks like this:
-`F:\Games\Origin Games\Mercenaries 2 World in Flames`. I need to add another backslash `\` at the end so CMD knows I'm gonna call files beneath it, I guess.
-Back to CMD/Terminal, type `cd ""` (AKA "call directory") and then move the cursor with your arrow keys to between the two quotes, then PASTE (CTRL + V) your game folder's path. Without the quotes, CMD will throw an error. Press ENTER to continue.
-CMD will show the path it started with instead. Why is it doing this? Well, if your game is on another drive, you need to call the drive letter. Since my game is on drive `F:`, I can type `f:` and my game folder's path will be called. I don't know why, don't ask, but it works.
+`F:\Games\Origin Games\Mercenaries 2 World in Flames`. I need to add another backslash `\` at the end so CMD knows I'm gonna call files beneath it, I guess. <br/>
+Back to CMD/Terminal, type `cd ""` (AKA "call directory") and then move the cursor with your arrow keys to between the two quotes, then PASTE (CTRL + V) your game folder's path. Without the quotes, CMD will throw an error. Press ENTER to continue. <br/>
+CMD will show the path it started with instead. Why is it doing this? Well, if your game is on another drive, you need to call the drive letter. Since my game is on drive `F:`, I can type `f:` and my game folder's path will be called. I don't know why, don't ask, but it works. <br/>
 So CMD will now be pointed at your game folder's path. What you can do next is type `apply_crack Mercenaries2.exe` and it will start patching your executable. It will create an entirely NEW executable called `Mercenaries2 cracked.exe`. If you open this now, it will start the game with the logging console and load the `Mercs2Fix.asi`. The logging console will show that it has indeed loaded the ASI. But what about the Lua-bridge? To verify that's working, you need to find `Mercs2Game.log` in your game folder. Open that with a text editor, and you'll see that it's listening to 127.0.0.1:27050 which is localhost on port 27050. Mercenaries 2 is now hosting a tiny Lua server on your computer, completely offline I might add, and is listening & waiting for you to send it messages; in this case, something called a "poke". You can read more about that elsewhere if you want, but you want the damn Cheat Menu, right? I know you do, because I do too.
 
 ## Step 5: Skewer the Winged Beast
 ### Installing and Running Python (a snake, but pretend it has wings)
-So now that you're in-game and itching to use the Cheat Menu, let me tell you real quick how to send Lua across the bridge. CMD can't do it alone, it requires some help.
-You should still have CMD open and pointed to your game folder.
-Type `python` and CMD will install python. I haven't figured out where it does this yet, but bear with me. After it finishes, you'll see that it no longer lists your current game folder path. It should look like three arrows pointing to the right, like this `>>>`. CMD is now running python.
-Type `exit()` to return to CMD's normal functions.
+So now that you're in-game and itching to use the Cheat Menu, let me tell you real quick how to send Lua across the bridge. CMD can't do it alone, it requires some help. <br/>
+You should still have CMD open and pointed to your game folder.<br/>
+Type `python` and CMD will install python. I haven't figured out where it does this yet, but bear with me. After it finishes, you'll see that it no longer lists your current game folder path. It should look like three arrows pointing to the right, like this `>>>`. CMD is now running python. <br/>
+Type `exit()` to return to CMD's normal functions. <br/>
 < insert image here
 
 ## Step 6: Wield an Iron Fist
 ### Setting up a Comm Outpost At the Lua Bridge
 Now that you can run python in CMD, you need to run `lua_repl.py`. To do this in CMD, make sure that it's pointed to your game folder. Remember when I told you to put that python file in the game folder? This is why.
-Type `python lua_repl.py`.
+Type `python lua_repl.py`. <br/>
 CMD will start python with that file loaded. You should see that it's waiting for you to type something. Pay attention to the instructions or else you're going to wonder why it's not doing anything after you start typing. I know I did, when I started doing this. Shut up, don't judge me.
 < insert image here
 
 ## Step 7: Raise Hell
 ## Sending Messages Across the Lua Bridge
-Accessing the Cheat Menu is super simple. The game just waits for the input and executes it without a second thought. Isn't that crazy?
-Type `Cheat.DisplayOptions()` and you'll see a weird but reassuring return message.
-Go back in-game and you'll see, behind the pause menu is the Cheat Menu. Unpause and you can browse the options while the rest of the game is in slow motion! Be very careful, however. You can mess up your save pretty quick if you hit a mission sequence-breaker accidentally.
+Accessing the Cheat Menu is super simple. The game just waits for the input and executes it without a second thought. Isn't that crazy? <br/>
+Type `Cheat.DisplayOptions()` and you'll see a weird but reassuring return message. <br/>
+Go back in-game and you'll see, behind the pause menu is the Cheat Menu. Unpause and you can browse the options while the rest of the game is in slow motion! Be very careful, however. You can mess up your save pretty quick if you hit a mission sequence-breaker accidentally. <br/>
 < insert more Lua pokes and images here
 
 ## Step 8: Freedom

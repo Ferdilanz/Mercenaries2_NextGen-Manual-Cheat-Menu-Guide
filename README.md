@@ -98,10 +98,12 @@ Accessing the Cheat Menu is super simple. The game just waits for the input and 
 Type `Cheat.DisplayOptions()` and press enter.
 Then type `<<<RUN>>>`, press enter, and you'll see a weird but reassuring return-message. <br/>
 Go back in-game and you'll see: behind the pause menu is the Cheat Menu. Unpause and you can browse the options while the rest of the game is in slow motion! Be very careful, however. You can mess up your save pretty quick if you hit a mission sequence-breaker accidentally. <br/>
+
+Other options include:
+- Infinite Ammo
+  - `Object.SetInfiniteAmmo(Player.GetPrimaryCharacter(), true)`
 You can find more valid Lua pokes [here](https://github.com/Mercenaries-Fan-Build/pmc-blackbox/wiki) <br/>
 <img width="2156" height="1471" alt="image" src="https://github.com/user-attachments/assets/fa86ea57-3251-4f3c-aa24-df5fa8f58644" />
-
-
 
 ## Step 8: Freedom
 ### Join the Mercenaries-games Modding Discord, `menace.pro`

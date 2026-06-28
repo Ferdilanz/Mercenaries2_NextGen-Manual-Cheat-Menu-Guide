@@ -1,6 +1,6 @@
 # Mercenaries 2 World in Flames "NextGen": Guide to Manually Access the Cheat-Menu
 
-A guide explaining how to set up SecuROM Bypass with Logging Console, Mercs2 Native CheatMenu via Lua-Bridge, and an early Multiplayer-revival ASI mod while Mercenaries 2 NextGen modding is still in its infancy. Guide deprecates when this process becomes automated. <br/>
+A guide explaining how to set up SecuROM Bypass with SDK Logging Console, Mercs2 Native CheatMenu via ASI, and an early Multiplayer-revival ASI mod while Mercenaries 2 NextGen modding is still in its infancy. Guide deprecates when this process becomes automated. <br/>
 I'm sick and daggone tired of making and using CheatEngine tables, trainers, and memory editors to cheat in this game just for it to crash in 5 minutes. Finally, after almost 2 decades, there's a way to open up the built-in Cheat Menu that Pandemic left behind. I'm not gonna be the first to use it, but I'm definitely gonna be the first to tell you all about how to do it in one place.
 
 # Getting Started
@@ -11,8 +11,9 @@ I'm sick and daggone tired of making and using CheatEngine tables, trainers, and
 | ------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | AustinKregel's SecuROM Bypass Patcher            | https://github.com/Mercenaries-Fan-Build/mercs2-securom-bypass/releases | Create a SecuROM-less Mercenaries2.exe. <br/> Recommend the x86_64 version. <br/> Current version 0.4.1 <br/> sha256:60e29e... |
 | AustinKregel's `pmc_bb.dll`                      | https://github.com/Mercenaries-Fan-Build/pmc-blackbox/releases | Set up the logging console. <br/> Current version 0.2.0 sha256:d598ee... |
-| LoganW234's `Mercs2Fix.asi` (WITH LUA) + DXWrapper | https://github.com/loganw234/Mercenaries2/releases/ | Lua-bridge on localhost for direct Lua injection, a multiplayer fix & ASI loader. <br/> Current version 1.1.1 |
-| `lua_repl.py`                                    | https://github.com/loganw234/Mercenaries2/blob/main/tools/lua_repl.py | Using the Lua-bridge on localhost via CMD/Terminal |
+| LoganW234's `dev_cheat_menu.asi` + ini | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/dev-cheat-menu | Enables the CheatMenu with Insert key. <br/> |
+| LoganW234's `lua_bridge.asi` + ini | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/lua-bridge | Allows the user to perform arbitrary script execution in the game through a tiny localhost server |
+| `lua_repl.py` | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/lua-bridge | Connects to the localhost Lua bridge to poke the game |
 | Python                                           | Type `python` in CMD as Administrator to install Python | Required to run `lua_repl.py` |
 | Retail/Origin/EA Play copy of Mercenaries 2      | Rip a Retail disk or something, I can't help you commit software piracy | Acquire the game, you know, so you can mod it |
 
@@ -21,16 +22,19 @@ I'm sick and daggone tired of making and using CheatEngine tables, trainers, and
 | Item | Source | Purpose |
 | --------------- | ---------- | ------------------------- |
 | AustinKregel's Mercs2 ModKit | https://github.com/Mercenaries-Fan-Build/mercs2-modkit/releases | Optional, but it will definitely make modding Mercs2 NextGen easier in the future. It probably makes modding easier now, too. |
-| ElishaCloud's DXWrapper | https://github.com/elishacloud/dxwrapper/releases | It's an ASI loader. Unnecessary since LoganW234 already prepackages the required files with his Lua-bridge. |
+| LoganW234's `lua_console.exe` | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/lua-bridge | Optional, connects automatically to the Lua bridge and is very user friendly. |
+| LoganW234's `mutliplayer_restore.asi` | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/multiplayer-restore | Optional but recommended if you want to play online with friends. |
+| LoganW234's `debug_overlay.asi` + ini | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/debug-overlay | Recommended if you like on-screen stats! |
+| ElishaCloud's DXWrapper | https://github.com/elishacloud/dxwrapper/releases | It's an ASI loader. Unnecessary since `pmc_bb.dll` already has one. <br/> If you run without the SecuROM bypass, a second ASI loader is required. |
 | ThirteenAG's Ultimate ASI Loader | https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases | It's an ASI loader. Completely unnecessary for what we're doing since DXWrapper AND the SecuROM bypass have ASI loaders built into them. |
 
 ### Valid Executables
 You **must** take a hash of your Mercenaries2.exe to determine whether it's usable for the SecuROM Bypass Patcher **and** the Lua-bridge. You can do this with any newer version of 7Zip through the context menu via right-clicking Mercenaries2.exe. <br/>
-After getting the SHA256 hash, copy it to your clipboard by double-clicking it to highlight, CTRL + C to copy, CTRL + F on this page to FIND, then paste the hash into the search field using CTRL + V. If your SHA256 hash matches one of these, you may proceed. <ins>**If it doesn't, find a different copy of the game.**</ins>
+After getting the SHA256 hash, copy it to your clipboard by double-clicking it to highlight, CTRL + C to copy, CTRL + F on this page to FIND, then paste the hash into the search field using CTRL + V. If your SHA256 hash matches one of these tested executables, you may proceed. <ins>**If it doesn't, find a different copy of the game.**</ins>
 
 | Version + Source                   | Size in bytes | Lua-Bridge Compatible? |  SHA256                    |
 | ---------------------------------- | ------------- | ------------------------- | ------------------------ |
-| 1.0 Origin/EA Play  (Signed EXE)   | 17,122,568 | Not thoroughly tested | a1532b4c7652fe9feee1191f5bd04aa073cd0f036e49831c754e7d895241dfa8 |
+| 1.0 Origin/EA Play  (Signed EXE)   | 17,122,568 | Confirmed | a1532b4c7652fe9feee1191f5bd04aa073cd0f036e49831c754e7d895241dfa8 |
 | 1.1 Retail + Repack (Unsigned EXE) | 53,944,080 | Confirmed | 7a348847e103d71e8c17e7a51a0f3b4d4422e0c9cb46ec6acc9fe5e4e6be36b5 |
 | 1.1 ALL SecuROM Bypassed EXEs      | 53,482,288 | Confirmed | 958eb22776067c2dbb7d684e472c5045d419ec0ecfb49bfea7d23fcf4a83f115 |
 
@@ -45,13 +49,14 @@ Place these files into your \Mercenaries 2 World in Flames\ game folder:
   - Rename `apply_crack-windows-x86_64.exe` to `apply_crack.exe`, this will make patching Mercenaries2.exe easier later.
 - AustinKregel's `pmc_bb.dll`
 - `lua_repl.py`
-- ElishaCloud's DXWrapper (provided by LoganW234)
+- ElishaCloud's DXWrapper (if running without SecuROM bypass)
   - `d3d9.dll`
   - `dxwrapper.dll`
   - `dxwrapper.ini`
 
 Place these files into your \Mercenaries 2 World in Flames\scripts. If you use \plugins or \update, put them there.
-- LoganW234's `Mercs2Fix.asi`
+- LoganW234's `lua_bridge.asi`
+- LoganW234's `lua_bridge.ini`
 
 ## Step 4: Unleash the Horde
 ### Patch Mercenaries2.exe
@@ -64,7 +69,7 @@ So CMD will now be pointed at your game folder's path. <br/>
 What you can do next is type `apply_crack Mercenaries2.exe`, press ENTER to continue, and it will start patching your executable, creating an entirely NEW executable called `Mercenaries2-cracked.exe`. <br/>
 <img width="1488" height="794" alt="image" src="https://github.com/user-attachments/assets/dccf20f5-7345-424a-8e8d-95b27ecbf616" />
 
-If you open the cracked executable now, it will start the game with the logging console and load the `Mercs2Fix.asi` mod file. The logging console will show that it has indeed loaded the ASI. But what about the Lua-bridge? To verify that's working, you need to find `Mercs2Debug.log` in your game folder. Open that with a text editor, and you'll see that it's listening to 127.0.0.1:27050 which is localhost on port 27050. Mercenaries 2 is now hosting a tiny Lua server on your computer, completely offline I might add, and is listening & waiting for you to send it messages; in this case, something called a "poke" I think, maybe "probe". You can read more about that elsewhere if you want. <br/>
+If you open the cracked executable now, it will start the game with the logging console and load the `lua_bridge.asi` mod file. The logging console will show that it has indeed loaded the ASI. But what about poking the game with the Lua bridge? To verify that's working, you need to find `Mercs2Debug.log` in your game folder. Open that with a text editor, and you'll see that it's listening to 127.0.0.1:27050 which is localhost on port 27050. Mercenaries 2 is now hosting a tiny Lua server on your computer, completely offline I might add, and is listening & waiting for you to send it messages; in this case, something called a "poke" I think, maybe "probe". You can read more about that elsewhere if you want. <br/>
 <img width="847" height="550" alt="image" src="https://github.com/user-attachments/assets/bec85dba-1547-4632-94ce-9f73db0a8238" />
 
 

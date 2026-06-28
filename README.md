@@ -78,7 +78,7 @@ CMD will start python with that file loaded. You should see that it's waiting fo
 < insert image here
 
 ## Step 7: Raise Hell
-## Sending Messages Across the Lua Bridge
+### Sending Messages Across the Lua Bridge
 Accessing the Cheat Menu is super simple. The game just waits for the input and executes it without a second thought. Isn't that crazy? <br/>
 Type `Cheat.DisplayOptions()` and press enter.
 Then type `<<<RUN>>>`, press enter, and you'll see a weird but reassuring return-message. <br/>

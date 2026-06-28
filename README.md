@@ -1,4 +1,4 @@
-# Mercenaries 2 World in Flames "NextGen" Manually Access the Cheat-Menu
+# Mercenaries 2 World in Flames "NextGen": Guide to Manually Access the Cheat-Menu
 
 A guide explaining how to set up SecuROM Bypass with Logging Console, Mercs2 Native CheatMenu via Lua-Bridge, and an early Multiplayer-revival ASI mod while Mercenaries 2 NextGen modding is still in its infancy
 

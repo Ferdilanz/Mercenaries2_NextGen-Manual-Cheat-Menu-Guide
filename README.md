@@ -57,6 +57,8 @@ Place these files into your \Mercenaries 2 World in Flames\ game folder:
 Place these files into your \Mercenaries 2 World in Flames\scripts. If you use \plugins or \update, put them there.
 - LoganW234's `lua_bridge.asi`
 - LoganW234's `lua_bridge.ini`
+- LoganW234's `dev_cheat_menu.asi`
+- LoganW234's `dev_cheat_menu.ini`
 
 ## Step 4: Unleash the Horde
 ### Patch Mercenaries2.exe

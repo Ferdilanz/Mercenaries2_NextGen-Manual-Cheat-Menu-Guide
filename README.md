@@ -98,6 +98,7 @@ Accessing the Cheat Menu is super simple. The game just waits for the input and 
 Type `Cheat.DisplayOptions()` and press enter.
 Then type `<<<RUN>>>`, press enter, and you'll see a weird but reassuring return-message. <br/>
 Go back in-game and you'll see: behind the pause menu is the Cheat Menu. Unpause and you can browse the options while the rest of the game is in slow motion! Be very careful, however. You can mess up your save pretty quick if you hit a mission sequence-breaker accidentally. <br/>
+With the new `dev_cheat_menu.asi`, all that's required to open the Cheat Menu now is to press insert. Also be careful with this, there's no current Lua script to _close the menu_ once it's opened. Infinite Cheat Menus! (Don't do this, you have been warned)
 
 Other options include:
 - Infinite Ammo

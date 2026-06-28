@@ -14,6 +14,7 @@ I'm sick and daggone tired of making and using CheatEngine tables, trainers, and
 | LoganW234's `dev_cheat_menu.asi` + ini | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/dev-cheat-menu | Enables the CheatMenu with Insert key. <br/> |
 | LoganW234's `lua_bridge.asi` + ini | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/lua-bridge | Allows the user to perform arbitrary script execution in the game through a tiny localhost server |
 | `lua_repl.py` | https://github.com/loganw234/Mercenaries2/tree/main/mod-ports/mercs2-qol-mods/lua-bridge | Connects to the localhost Lua bridge to poke the game |
+| 7-Zip | https://www.7-zip.org/ | For SHA256 hashing your Mercenaries2.exe. <br/> Just update if you have it already. |
 | Python                                           | Type `python` in CMD as Administrator to install Python | Required to run `lua_repl.py` |
 | Retail/Origin/EA Play copy of Mercenaries 2      | Rip a Retail disk or something, I can't help you commit software piracy | Acquire the game, you know, so you can mod it |
 

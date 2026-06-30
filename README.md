@@ -31,13 +31,15 @@ I'm sick and daggone tired of making and using CheatEngine tables, trainers, and
 
 ### Valid Executables
 You **must** take a hash of your Mercenaries2.exe to determine whether it's usable for the SecuROM Bypass Patcher **and** the Lua-bridge. You can do this with any newer version of 7-Zip through the context menu via right-clicking Mercenaries2.exe. <br/>
-After getting the SHA256 hash, copy it to your clipboard by double-clicking it to highlight, CTRL + C to copy, CTRL + F on this page to FIND, then paste the hash into the search field using CTRL + V. If your SHA256 hash matches one of these tested executables, you may proceed. <ins>**If it doesn't, find a different copy of the game.**</ins>
+After getting the SHA256 hash, copy it to your clipboard by double-clicking it to highlight, CTRL + C to copy, CTRL + F on this page to FIND, then paste the hash into the search field using CTRL + V. If your SHA256 hash matches one of the confirmed compatible executables, you may proceed. <ins>**If it doesn't, find a different copy of the game.**</ins>
 
 | Version + Source                   | Size in bytes | Lua-Bridge Compatible? |  SHA256                    |
 | ---------------------------------- | ------------- | ------------------------- | ------------------------ |
 | 1.0 Origin/EA Play  (Signed EXE)   | 17,122,568 | Confirmed | a1532b4c7652fe9feee1191f5bd04aa073cd0f036e49831c754e7d895241dfa8 |
-| 1.1 Retail + Repack (Unsigned EXE) | 53,944,080 | Confirmed | 7a348847e103d71e8c17e7a51a0f3b4d4422e0c9cb46ec6acc9fe5e4e6be36b5 |
-| 1.1 ALL SecuROM Bypassed EXEs      | 53,482,288 | Confirmed | 958eb22776067c2dbb7d684e472c5045d419ec0ecfb49bfea7d23fcf4a83f115 |
+| 1.0 Disk Rip A237 (Unsigned EXE) | 16,846,848 | Confirmed | ada5545526c4d09d8000f0e7600c0cbc24b7b360638fa2dde407cd7f976534d7 |
+| 1.1 Retail (Unsigned EXE) | 53,944,080 | Confirmed | 7a348847e103d71e8c17e7a51a0f3b4d4422e0c9cb46ec6acc9fe5e4e6be36b5 |
+| 1.1 Cruse.dll Crack | 53,482,288 | Incompatible | 23fe7f3816b7cc43b5b3499e8ae72e664df59c34498cd1d944b4c357918914ac |
+| 1.1 pmc_bb.dll SecuROM Bypass      | 53,482,288 | Confirmed | 958eb22776067c2dbb7d684e472c5045d419ec0ecfb49bfea7d23fcf4a83f115 |
 
 ## Step 2: Ascend from Darkness
 ### For the Sake of Neatness
